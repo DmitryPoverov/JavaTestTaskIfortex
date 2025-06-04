@@ -21,7 +21,8 @@ public interface UserRepository extends JpaRepository<User, Long> {
     User getUserWithMostSessions();
 
     @Query(value = """
-        SELECT u.* FROM users u
+        SELECT u.*
+        FROM users u
         JOIN sessions s ON u.id = s.user_id
         WHERE s.device_type = ?1
         GROUP BY u.id
