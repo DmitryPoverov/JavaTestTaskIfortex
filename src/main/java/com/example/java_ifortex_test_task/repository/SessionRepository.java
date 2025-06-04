@@ -8,6 +8,7 @@ import java.sql.Timestamp;
 import java.util.List;
 
 public interface SessionRepository extends JpaRepository<Session, Long> {
+
     @Query(value = """
     SELECT s.id,
            s.user_id,

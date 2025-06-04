@@ -23,7 +23,6 @@ public class SessionService {
 
     // Returns the first (earliest) desktop Session
     public SessionResponseDTO getFirstDesktopSession() {
-
         Session firstDesktopSession = sessionRepository.getFirstDesktopSession(DESKTOP_CODE);
         return sessionMapper.toDto(firstDesktopSession);
     }
